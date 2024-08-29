@@ -24,9 +24,10 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 90%;
     margin: 0 auto;
     padding: 0 2rem;
+
 }
 
 header {
@@ -210,7 +211,7 @@ ul {
 #hero h1 {
     font-size: 3.5rem;
     margin-bottom: 1rem;
-    color: white;
+    color: linear-gradient(135deg, #4a90e2, #50c878);;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 /* Optional custom styles */
@@ -242,6 +243,8 @@ body {
     justify-content: space-between; /* Distribute space evenly */
     padding: 0; /* Remove padding to utilize full width */
     margin: 0; /* Remove margin to avoid overflow */
+    margin-bottom: 4%;
+    border-radius: 8px;
 }
 
 /* Skill Module Styling */
@@ -303,16 +306,18 @@ body {
 .experience-container {
     display: flex;
     flex-direction: column;
+    margin-bottom: 4%;
 }
 
 /* Individual experience item styling */
 .experience-item {
-    margin-bottom: 30px;
+    margin-bottom: 3%;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background: #fff;
     transition: transform 0.3s, box-shadow 0.3s;
+    background: linear-gradient(135deg, #4a90e2, #50c878);
 }
 
 /* Hover effect for experience items */
@@ -347,6 +352,7 @@ body {
     flex-wrap: wrap;
     gap: 20px;
     padding: 20px;
+    border-radius: 8px;
 }
 
 /* Individual experience detail styling */
@@ -381,6 +387,9 @@ body {
     display: flex;
     justify-content: center; /* Center the module horizontally */
     padding: 1rem; /* Add padding for spacing */
+    background: linear-gradient(135deg, #4a90e2, #50c878);
+    border-radius: 8px;
+    margin-bottom: 4%;
 }
 
 /* Education Module Styling */
@@ -450,6 +459,9 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around; /* Centers items and adds space between them */
+    background: linear-gradient(135deg, #4a90e2, #50c878);
+    margin-bottom: 4%;
+    border-radius: 8px;
 }
 
 .contact-module {
@@ -517,6 +529,9 @@ body {
     display: flex;
     justify-content: center; /* Center the module horizontally */
     padding: 1rem; /* Add padding for spacing */
+    background: linear-gradient(135deg, #4a90e2, #50c878);
+    margin-bottom: 4%;
+    border-radius: 8px;
 }
 
 /* About Module Styling */
@@ -566,4 +581,42 @@ body {
 
 .section-spacing {
     margin-bottom: 2rem; /* Adjust this value as needed */
+}
+
+
+.navbar-light .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar-toggler {
+    border-color: rgba(0,0,0,.1);
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 0.1rem;
+}
+
+
+.custom-navbar {
+    background: linear-gradient(135deg, #4a90e2, #50c878);
+}
+
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        background: linear-gradient(135deg, #4a90e2, #50c878);
+        padding: 1rem;
+        border-radius: 0.25rem;
+    }
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: white;
+}
+
+.navbar-light .navbar-toggler {
+    border-color: rgba(255,255,255,0.5);
+}
+
+.navbar-light .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
