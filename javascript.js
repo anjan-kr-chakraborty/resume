@@ -1,17 +1,12 @@
-document.addEventListener('DOMContentLoaded', (event) => {
-    gsap.from("section", {
-        duration: 1,
-        y: 50,
-        opacity: 0,
-        stagger: 0.2,
-        ease: "power2.out"
-    });
-
-    const menuBtn = document.getElementById('menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    
-    menuBtn.addEventListener('click', () => {
-        menuBtn.classList.toggle('active');
-        mobileMenu.classList.toggle('active');
+document.addEventListener('DOMContentLoaded', function() {
+    var navLinks = document.querySelectorAll('.nav-link');
+    var menuToggle = document.getElementById('navbarNav');
+    var bsCollapse = new bootstrap.Collapse(menuToggle, {toggle: false});
+    navLinks.forEach(function(navLink) {
+        navLink.addEventListener('click', function() {
+            if (window.innerWidth < 992) { // Bootstrap's lg breakpoint
+                bsCollapse.hide();
+            }
+        });
     });
 });
