@@ -1,270 +1,637 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Senior Software Engineer Portfolio</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="style.css">
-   </head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anjan Chakraborty – About Me</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400|Fira+Mono:400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --spotify-green: #1db954;
+      --spotify-green-dark: #169943;
+      --spotify-dark: #181818;
+      --spotify-light: #232526;
+      --spotify-bg: linear-gradient(120deg, #191414 0%, #232526 100%);
+      --section-bg: #232526;
+      --card-bg: #232526;
+      --card-bg-light: #292c2f;
+      --border: #222;
+      --tag-bg: #232526;
+      --tag-bg-hover: #1db954;
+      --text-main: #fff;
+      --text-light: #e1ffe7;
+      --text-accent: #1db954;
+      --shadow: 0 5px 30px #000a, 0 1.5px 7px #1db95422;
+      --code-bg: #191c22;
+      --code-border: #1db954cc;
+      --code-string: #f3ec8c;
+      --code-func: #1db954;
+      --code-keyword: #82aaff;
+      --code-comment: #6c8296;
+      --code-number: #f78c6c;
+      --code-tag: #c792ea;
+      --edu-accent: #1db954;
+      --edu-badge-bg: #191c22;
+      --edu-badge-border: #1db954;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      min-height: 100%;
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: var(--spotify-bg);
+      color: var(--text-main);
+      overflow-x: hidden;
+    }
+    body {
+      background: var(--spotify-bg);
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+    }
+    .main-wrap {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 1;
+      padding-bottom: 48px;
+    }
+    .hero-card {
+      margin: 64px auto 0 auto;
+      background: var(--card-bg);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      padding: 48px 42px 28px 42px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+      border: 1.5px solid var(--border);
+      max-width: 600px;
+      width: 95%;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-title {
+      font-size: 2.3rem;
+      font-weight: 900;
+      color: var(--spotify-green);
+      margin: 0;
+      letter-spacing: 1px;
+      font-family: 'Montserrat', Arial, sans-serif;
+      line-height: 1.15;
+      text-shadow: 0 2px 18px #1db95422;
+    }
+    .hero-sub {
+      font-size: 1.18rem;
+      color: var(--text-light);
+      font-weight: 600;
+      font-family: 'Fira Mono', monospace;
+      letter-spacing: 0.7px;
+      margin-top: 2px;
+      margin-bottom: 12px;
+      opacity: 0.96;
+    }
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 14px;
+      margin-top: 6px;
+    }
+    .hero-tag {
+      background: var(--tag-bg);
+      color: var(--spotify-green);
+      padding: 7px 19px;
+      font-size: 1.03rem;
+      font-weight: 700;
+      border-radius: 14px;
+      border: 1.5px solid var(--spotify-green);
+      cursor: pointer;
+      text-shadow: 0 1px 6px #0008;
+      transition: background 0.18s, color 0.18s;
+      margin-bottom: 3px;
+      letter-spacing: 0.6px;
+    }
+    .hero-tag:hover {
+      background: var(--spotify-green);
+      color: #191414;
+      border-color: var(--spotify-green-dark);
+    }
+    .hero-desc {
+      margin: 0 0 8px 0;
+      font-size: 1.13rem;
+      line-height: 1.7;
+      color: var(--text-main);
+      opacity: 0.97;
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: #1e2021;
+      border-left: 5px solid var(--spotify-green);
+      padding: 1.1em 1.3em 1.1em 1.2em;
+      border-radius: 0 15px 15px 0;
+      box-shadow: 0 2px 12px #1db95419;
+      transition: box-shadow 0.2s, border-left 0.2s;
+    }
+    /* Coder section */
+    .coder-section {
+      margin: 40px auto 0 auto;
+      max-width: 680px;
+      background: var(--code-bg);
+      border-radius: 16px;
+      border: 2px solid var(--code-border);
+      box-shadow: 0 3px 24px #1db95433;
+      padding: 26px 28px 21px 28px;
+      font-family: 'Fira Mono', monospace;
+      color: #fff;
+      position: relative;
+      z-index: 9;
+      overflow-x: auto;
+      animation: fadeInUp 1.1s cubic-bezier(.39,.575,.565,1) 0.18s both;
+    }
+    .coder-title {
+      color: var(--spotify-green);
+      font-size: 1.19rem;
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 14px;
+      text-align: left;
+      border-left: 4px solid var(--spotify-green);
+      padding-left: 13px;
+      margin-top: 0;
+    }
+    .coder-terminal {
+      background: #16181a;
+      border-radius: 12px;
+      padding: 20px 24px 18px 24px;
+      margin-top: 6px;
+      min-height: 60px;
+      font-size: 1.08rem;
+      box-shadow: 0 2px 14px #1db95430;
+      border: 1px solid #232f2c;
+      overflow-x: auto;
+    }
+    .code-kw { color: var(--code-keyword); }
+    .code-str { color: var(--code-string); }
+    .code-func { color: var(--code-func); }
+    .code-comm { color: var(--code-comment); font-style: italic;}
+    .code-num { color: var(--code-number);}
+    .code-tag { color: var(--code-tag); }
+    .blinking-cursor {
+      display: inline-block;
+      width: 10px;
+      height: 1em;
+      background: var(--spotify-green);
+      border-radius: 3px;
+      margin-left: 2px;
+      animation: blink 1.1s steps(1, end) infinite;
+      vertical-align: middle;
+    }
+    @keyframes blink {
+      0%, 49% { opacity: 1; }
+      50%, 100% { opacity: 0; }
+    }
+    /* --- SECTION CARDS --- */
+    .section {
+      margin: 46px auto 0 auto;
+      max-width: 900px;
+      padding: 34px 36px 18px 36px;
+      background: var(--section-bg);
+      border-radius: 16px;
+      box-shadow: 0 2px 22px #1db95415;
+      border: 1.3px solid var(--border);
+      position: relative;
+      z-index: 1;
+      backdrop-filter: blur(0.5px);
+      overflow: hidden;
+    }
+    .section-title {
+      font-size: 1.27rem;
+      color: var(--spotify-green);
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+      font-weight: 800;
+      border-left: 4px solid var(--spotify-green);
+      padding-left: 12px;
+      display: inline-block;
+      background: #222;
+      border-radius: 6px;
+      filter: brightness(1.10);
+      font-family: 'Montserrat', Arial, sans-serif;
+      text-shadow: 0 2px 10px #1db95433;
+    }
+    .experience-list, .education-list, .cert-list {
+      margin: 0; padding: 0; list-style: none;
+    }
+    .exp-card, .edu-card, .cert-card {
+      margin-bottom: 20px;
+      padding: 15px 20px 11px 20px;
+      border-radius: 10px;
+      background: var(--card-bg-light);
+      box-shadow: 0 0.5px 7px #1db95413;
+      border-left: 3px solid var(--spotify-green);
+      transition: box-shadow 0.3s, background 0.2s, transform 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .exp-card:hover, .edu-card:hover, .cert-card:hover {
+      box-shadow: 0 6px 24px #1db9543d;
+      background: #232b23;
+      transform: translateY(-3px) scale(1.011);
+    }
+    .exp-card > *, .edu-card > *, .cert-card > * { position: relative; z-index: 1; }
+    .job-title {
+      font-weight: 700;
+      font-size: 1.10rem;
+      color: var(--spotify-green);
+      margin-bottom: 2px;
+      letter-spacing: 0.3px;
+      font-family: 'Montserrat', Arial, sans-serif;
+    }
+    .company {
+      color: #e7ffde;
+      font-size: 1rem;
+      font-weight: 500;
+      margin-left: 5px;
+      letter-spacing: 0.3px;
+    }
+    .duration {
+      font-size: 0.97rem;
+      color: #bfffc2;
+      margin-left: 6px;
+      font-style: italic;
+      margin-bottom: 0;
+    }
+    .exp-card ul, .edu-card ul {
+      margin: 7px 0 0 0;
+      padding: 0 0 0 0;
+      list-style: none;
+    }
+    .exp-card li, .edu-card li {
+      margin-bottom: 7px;
+      position: relative;
+      padding-left: 19px;
+      color: #dbffda;
+      font-size: 1.01rem;
+      line-height: 1.7;
+      opacity: 0.98;
+      font-family: 'Fira Mono', monospace;
+    }
+    .exp-card li::before, .edu-card li::before {
+      content: "▶";
+      color: var(--spotify-green);
+      position: absolute;
+      left: 0;
+      font-size: 0.98em;
+      top: 1px;
+      opacity: 0.8;
+    }
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 8px;
+      margin-bottom: 10px;
+      justify-content: flex-start;
+    }
+    .skill {
+      background: var(--tag-bg);
+      color: var(--spotify-green);
+      padding: 7px 16px;
+      border-radius: 14px;
+      font-size: 1.01rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      box-shadow: 0 2px 10px #1db95411;
+      transition: transform 0.14s, box-shadow 0.11s, background 0.2s, color 0.2s;
+      cursor: pointer;
+      font-family: 'Montserrat', Arial, sans-serif;
+      border: 1.3px solid var(--spotify-green);
+    }
+    .skill:hover {
+      transform: scale(1.08) rotate(-2deg);
+      box-shadow: 0 6px 24px #1db95433;
+      background: var(--spotify-green);
+      color: #191414;
+    }
+    /* --- Education Badge Timeline --- */
+    .edu-timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-top: 30px;
+      margin-bottom: 18px;
+      position: relative;
+    }
+    .edu-timeline:before {
+      content: "";
+      position: absolute;
+      left: 24px;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: linear-gradient(to bottom, var(--spotify-green), #232526 80%);
+      border-radius: 2px;
+      z-index: 0;
+    }
+    .edu-badge {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      position: relative;
+      z-index: 1;
+    }
+    .edu-badge-dot {
+      width: 18px;
+      height: 18px;
+      min-width: 18px;
+      border-radius: 50%;
+      background: var(--edu-badge-bg);
+      border: 3px solid var(--edu-badge-border);
+      box-shadow: 0 0 0 4px #1db95411;
+      margin-top: 2px;
+      position: relative;
+      z-index: 1;
+      transition: background 0.2s, border 0.2s;
+    }
+    .edu-badge:hover .edu-badge-dot {
+      background: var(--spotify-green);
+      border-color: #fff;
+    }
+    .edu-badge-content {
+      background: #21251b;
+      border-radius: 12px;
+      padding: 18px 22px 14px 22px;
+      box-shadow: 0 1.5px 13px #1db95422;
+      border-left: 4px solid var(--spotify-green);
+      color: #fff;
+      min-width: 0;
+      flex: 1;
+      position: relative;
+    }
+    .edu-badge-title {
+      font-size: 1.09rem;
+      font-weight: 700;
+      color: var(--spotify-green);
+      margin-bottom: 5px;
+      letter-spacing: 0.4px;
+      font-family: 'Montserrat', Arial, sans-serif;
+    }
+    .edu-badge-meta {
+      font-size: 0.98rem;
+      color: #c6ffd7;
+      margin-bottom: 7px;
+      font-family: 'Fira Mono', monospace;
+    }
+    .edu-badge-desc {
+      font-size: 0.99rem;
+      color: #e2ffe5;
+      font-family: 'Fira Mono', monospace;
+      margin-bottom: 5px;
+      line-height: 1.65;
+    }
+    .edu-badge-project {
+      background: #161a17;
+      color: #dbffda;
+      font-size: 0.98rem;
+      border-left: 3px solid var(--spotify-green);
+      padding: 8px 0 8px 14px;
+      margin: 10px 0 0 0;
+      border-radius: 0 8px 8px 0;
+      font-style: italic;
+      font-family: 'Fira Mono', monospace;
+    }
+    .cert-link {
+      color: var(--spotify-green);
+      text-decoration: underline;
+      font-size: 1.01rem;
+      margin-left: 10px;
+      transition: color 0.2s;
+      font-family: 'Fira Mono', monospace;
+    }
+    .cert-link:hover {
+      color: #fff;
+      text-shadow: 0 0 12px #1db954, 0 1px 8px #191414;
+    }
+    @media (max-width: 1024px) {
+      .hero-card, .section, .coder-section { padding-left: 7vw; padding-right: 7vw; }
+      .edu-badge-content { padding: 14px 10px 12px 12px;}
+    }
+    @media (max-width: 800px) {
+      .main-wrap { padding-bottom: 18px;}
+      .hero-card {padding: 32px 3vw 22px 3vw;}
+      .coder-section { padding: 18px 2vw 16px 2vw;}
+      .edu-timeline:before { left: 15px;}
+      .edu-badge-dot { min-width: 14px; width: 14px; height: 14px;}
+      .edu-badge-content { padding: 10px 7px 10px 10px;}
+    }
+    @media (max-width: 600px) {
+      .hero-card, .section, .coder-section { padding: 6vw 2vw 6vw 2vw; }
+      .hero-title { font-size: 1.45rem;}
+      .skills, .hero-tags { gap: 8px;}
+      .section { margin: 12px auto 0 auto;}
+      .main-wrap { padding-bottom: 0;}
+      .edu-badge-content { padding: 8px 4px 7px 7px;}
+    }
+  </style>
+</head>
 <body>
- <header>
-    <nav class="navbar navbar-expand-lg navbar-light custom-navbar">
-        <div class="container">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#skills">Skills</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#experience">Experience</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#education">Education</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-</header>
-
-
-
-
-<main>
-    <!-- Main content sections -->
-    <section id="hero">
-        <h1>Anjan Chakraborty</h1>
-        <h2>Senior Software Engineer</h2>
-        <p>Innovative problem-solver with a passion for scalable solutions</p>
+  <div class="main-wrap">
+    <!-- HERO CARD -->
+    <section class="hero-card" id="about">
+      <h1 class="hero-title">Anjan Chakraborty</h1>
+      <div class="hero-sub">Senior Software Engineer</div>
+      <div class="hero-tags">
+        <span class="hero-tag">Scala</span>
+        <span class="hero-tag">Java</span>
+        <span class="hero-tag">Microservices</span>
+        <span class="hero-tag">Fintech</span>
+        <span class="hero-tag">HRTech</span>
+        <span class="hero-tag">Scalable Systems Enthusiast</span>
+      </div>
+      <div class="hero-desc">
+        Senior Software Engineer with 5+ years in back-end development, specializing in Scala, Java, and microservices.<br>
+        Experienced in project management and designing scalable B2B platforms for over 3 million users.<br>
+        Proven leader in cross-functional teams and product innovation, while mentoring peers to achieve goals efficiently.<br>
+        Let's connect to grow and build scalable systems together! 🚀
+      </div>
     </section>
 
-
-
-    <section id="about" class="container my-5 section-spacing">
-        <h2 class="text-center mb-4">About Me</h2>
-        <div class="about-container">
-            <div class="about-module">
-                <p>
-                    Innovative Senior Software Engineer with over 4 years of experience in back-end development, specializing in Scala, Java, and microservices architecture. Proficient in project management, database schema design, and developing scalable B2B platforms serving over 3 million users. Demonstrated expertise in leading cross-functional teams, driving product innovation, and swiftly adapting to new technologies in fast-paced startup environments. Adept at managing multiple modules independently while mentoring and guiding peers to achieve objectives efficiently and within deadlines.
-                </p>
-            </div>
-        </div>
+    <!-- CODER STUFF -->
+    <section class="coder-section" id="coder">
+      <h2 class="coder-title">Coder's Playground</h2>
+      <div class="coder-terminal" aria-label="Simulated code window">
+        <span class="code-comm">// Welcome to my code world!</span><br>
+        <span class="code-kw">object</span> <span class="code-tag">AboutMe</span> <span class="code-kw">{</span><br>
+        &nbsp;&nbsp;<span class="code-kw">def</span> <span class="code-func">main</span>(<span class="code-tag">args</span>: <span class="code-kw">Array</span>[<span class="code-kw">String</span>]): <span class="code-kw">Unit</span> = <span class="code-kw">{</span><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-comm">// Backend engineer, system designer, team builder</span><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-kw">val</span> <span class="code-tag">techStack</span> = <span class="code-str">"Scala, Java, Microservices, AWS, Terraform"</span><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-kw">println</span>(<span class="code-str">"👋 Hi, I'm Anjan. Let's build scalable systems together!"</span>)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-comm">// Always learning. Always coding. Always scaling.</span><br>
+        &nbsp;&nbsp;<span class="code-kw">}</span><br>
+        <span class="code-kw">}</span>
+        <span class="blinking-cursor"></span>
+      </div>
     </section>
 
-
-
-    <section id="contact" class="container my-5 section-spacing">
-        <h2 class="text-center mb-4">Contact</h2>
-        <div class="contact-container">
-            <!-- <div class="contact-module">
-                <i class="fas fa-phone fa-3x mb-3 contact-icon"></i>
-                <h3 class="h5">Phone Number</h3>
-                <p id="phone">+123-456-7890</p> 
-            </div> 
-            <div class="contact-module">
-                <i class="fas fa-envelope fa-3x mb-3 contact-icon"></i>
-                <h3 class="h5">Email Address</h3>
-                <p id="email">example@example.com</p> 
-            </div>-->
-            <div class="contact-module">
-                <i class="fab fa-linkedin fa-3x mb-3 contact-icon"></i>
-                <h3 class="h5">LinkedIn Profile</h3>
-                <a href="https://www.linkedin.com/in/anjan-chakraborty-ac" id="linkedin" class="contact-link">LinkedIn Profile</a>
-            </div>
-        </div>
+    <!-- EXPERIENCE -->
+    <section class="section" id="experience">
+      <div class="section-title">Experience</div>
+      <ul class="experience-list">
+        <li class="exp-card">
+          <div>
+            <span class="job-title">Senior Software Engineer</span>
+            <span class="company">@ DivIniSoft</span>
+            <span class="duration">Dec 2024 – Present</span>
+          </div>
+          <ul>
+            <li>Working in a Fintech focusing on trading and investment Portfolio Management system - trading engineering team.</li>
+            <li>Experience in integrating execution venues and exchanges.</li>
+            <li>Handle the post-trade lifecycle, ensuring efficient trade processing and reporting for financial institutions.</li>
+            <li>Focus on optimizing trade management and data flow across different financial systems.</li>
+            <li>Working knowledge of AWS ECS Fargate, ECR, Terraform, and CI/CD pipeline.</li>
+          </ul>
+        </li>
+        <li class="exp-card">
+          <div>
+            <span class="job-title">Senior Software Engineer</span>
+            <span class="company">@ Vantage Circle</span>
+            <span class="duration">Oct 2023 – Dec 2024</span>
+          </div>
+          <ul>
+            <li>Architected a microservices ecosystem, improving response times by 20% and reducing deployment errors while transitioning from a monolith to handle high transaction volumes.</li>
+            <li>Implemented multi-database setup across multiple geographic regions for PAAS and white labeling of clients.</li>
+            <li>Enhanced data security through PII encryption across platform.</li>
+            <li>Led automation of product customizations, reducing customization time by 30%.</li>
+            <li>Conducted a system-wide performance analysis and optimisations, reducing bulk user registration time by 97% (from 6 hours to 10 minutes) and significantly enhancing platform performance.</li>
+            <li>Established code review process and ScalaStyle implementation, reducing post-release bugs.</li>
+          </ul>
+        </li>
+        <li class="exp-card">
+          <div>
+            <span class="job-title">Software Engineer</span>
+            <span class="company">@ Vantage Circle</span>
+            <span class="duration">Aug 2020 – Sep 2023</span>
+          </div>
+          <ul>
+            <li>Developed a comprehensive service integrating external SOAP and REST APIs to fetch and store deals, and process purchase data for efficient cashback distribution.</li>
+            <li>Led rapid prototyping: Explored emerging technologies like Apache Kafka, ELK stack, and Flutter for mobile/web apps, and developed POCs for ongoing product enhancement.</li>
+            <li>Implemented holidays and vacations display and bookings service via reward points (platform currency).</li>
+            <li>Enhanced platform security with device validation and password controls.</li>
+            <li>Implemented platform demo system that boosted lead conversion by 10%.</li>
+            <li>Proficient in Monolithic and Microservices architecture, including message-driven architecture.</li>
+            <li>Developed Scala libraries for enhanced functionality.</li>
+            <li>Managed a merchandise listing and gifting service for user convenience.</li>
+            <li><b>Responsibilities:</b> Develop, test, and document new product features, customizations, and troubleshoot service failures. Oversee product development, enhancements, and bug fixes within a Scrum team using Agile methodology. Consult and implement product customizations.</li>
+          </ul>
+        </li>
+        <li class="exp-card">
+          <div>
+            <span class="job-title">Software Engineer Intern</span>
+            <span class="company">@ Vantage Circle</span>
+            <span class="duration">May 2020 – Jul 2020</span>
+          </div>
+          <ul>
+            <li>Responsible for backend development in a product-based SAAS Company.</li>
+            <li>Working knowledge of functional and object-oriented programming.</li>
+            <li>Developed platform dashboard RESTful APIs using Play Framework (MVC) and analytics reports.</li>
+            <li>Merchandise listing and gifting service: User can browse and gift/send merchandise to their colleagues.</li>
+          </ul>
+        </li>
+      </ul>
     </section>
 
-
-
-
-    <section id="skills" class="container my-5 section-spacing">
-       <h2 class="text-center mb-4">Skills</h2>
-       <div class="skills-container">
-        <!-- Skill Module -->
-        <div class="skill-module">
-            <i class="fas fa-code fa-3x mb-3"></i>
-            <h3 class="h5">Languages</h3>
-            <p>Scala, Java</p>
-        </div>
-        <div class="skill-module">
-            <i class="fas fa-cogs fa-3x mb-3"></i>
-            <h3 class="h5">Frameworks & Libraries</h3>
-            <p>Play Framework (MVC), Akka, Cats, Cats Effect</p>
-        </div>
-        <div class="skill-module">
-            <i class="fas fa-database fa-3x mb-3"></i>
-            <h3 class="h5">Databases</h3>
-            <p>MySQL, PostgreSQL, Redis, Memcached(caching)</p>
-        </div>
-        <div class="skill-module">
-            <i class="fas fa-network-wired fa-3x mb-3"></i>
-            <h3 class="h5">Architecture</h3>
-            <p>Microservices, Event-driven, CQRS, Event Sourcing, Pub/Sub systems, Message-driven</p>
-        </div>
-        <div class="skill-module">
-            <i class="fas fa-tools fa-3x mb-3"></i>
-            <h3 class="h5">Other</h3>
-            <p>GraphQL, RESTful APIs, SOAP, DevOps basics, Risk and Change Management using JIRA</p>
-        </div>
-    </div>
-</section>
-<!-- Additional Skills & Qualifications Section -->
-<section id="additional-skills" class="container my-5 section-spacing">
-    <h3 class="text-center mb-4">Additional Skills & Qualifications</h3>
-    <div class="additional-skills-container">
-        <!-- Additional Skill Module -->
-        <div class="additional-skill-module">
-            <p>Proficient in SDLC methodologies, Agile/Scrum, and Software Project Management</p>
-        </div>
-        <div class="additional-skill-module">
-            <p>DevOps tools: Grafana, Jenkins, CI/CD pipeline, cloud computing (Digital Ocean)</p>
-        </div>
-        <div class="additional-skill-module">
-            <p>Skilled in improving platform stability and reliability by analyzing, debugging,
-                and troubleshooting API and service failures to support optimal performance</p>
-        </div>
-        <div class="additional-skill-module">
-            <p>Experienced in Test-Driven Development (TDD), unit testing, iterative cycles of development, and documentation</p>
-        </div>
-        <div class="additional-skill-module">
-            <p>Applied Agile methods, delivering client-aligned solutions and contributing to sprint processes.</p>
-        </div>
-    </div>
-</section>
-
-<section id="experience" class="container my-5 section-spacing">
-    <h2 class="text-center mb-4">Experience</h2>
-    <div class="experience-container">
-        <!-- Experience Item 1 -->
-        <div class="experience-item">
-            <div class="experience-header">
-                <div class="company-logo">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAjVBMVEUpKUwoKEsmJkodHUUxMVKfn64QED0fH0YQEECQkJ+ZmagiIkgkJElYWG7y8vVBQV8UFEBpaYDe3uP///89PVwYGEGGhpfLy9Pn5+saGkKsrLivr7oAADpJSWbZ2eHBwcp7e4oWFkEvL1HFxc5gYHlNTWo5OViEhJi6usRTU2zi4uZjY3h4eIxwcIWnp7ZqB5JAAAABaUlEQVR4AWKgHAD6JAttCUEoilKKgS1hYOc8nP//u9c1SZ61NnELom+B7zBi2R87dVzPv4YsCCMGQJykWY6uIReZ9BH3VCiLm2ftUmVV7Ya6kfEtbDsrEz0f1GgzH8FfWyh6h1VXy5SjKPRgMs0LZJ8MLSvksR0tNFBLL8JlmJJ1XYOvy8WmZLsJn9J012rtIdfrOpMfF8NTqsLwhSckMpyCyTWE/Xwauw0g2lUzhghHZl2TT4N+6DY6KN4X9GHBrgld/D8ImXCKQRP4oX0fFtaB/yhyjDylCYWARZYGbLB29sv8czhODOcELCw5u6tZf6IPebQpy6b+3OxRSWluXM87H/TrnntSzfFCCil6UuUI+QiAxQzw8ybQxmtbnTQ58ith7wYDiNBvEdC+x703DnFsxilwb5NWWK1fHdjbvPUW4nLbKojIeTvobYFJKWIImG53dg2pKQn/ENwl8Lb8MPoSw73CvRHP2xsy7ByaXT6G9gAAAABJRU5ErkJggg==" alt="Company Logo">
-                </div>
-                <div class="experience-title">
-                    <h3>Senior Software Engineer | Vantage Circle</h3>
-                    <p class="date">Oct 2023 - Present</p>
-                </div>
+    <!-- EDUCATION: TIMELINE BADGES -->
+    <section class="section" id="education">
+      <div class="section-title">Education</div>
+      <div class="edu-timeline">
+        <div class="edu-badge">
+          <div class="edu-badge-dot"></div>
+          <div class="edu-badge-content">
+            <div class="edu-badge-title">BTech, Electronics & Communication Engineering</div>
+            <div class="edu-badge-meta">@ Assam Science and Technology University &mdash; <b>CGPA:</b> 8.07 (80.7%)</div>
+            <div class="edu-badge-desc">
+              Coordinator of Inter-college Circuit Hunters Competition.<br>
+              Designed AM based Communication System and implemented it using basic electronic components.<br>
+              Participated in Robotics, Image Processing & Embedded Systems Workshops.
             </div>
-            <div class="experience-details">
-                <div class="experience-detail">
-                    <p>Spearheaded the development and launch of multiple products generating over $60 million in revenue within a year, and strengthening the company’s market position</p>
-                </div>
-                <div class="experience-detail">
-                    <p>Led and mentored teams of 10+, delivering projects early and securing rapid promotions for all junior engineers</p>
-                </div>
-                <div class="experience-detail">
-                    <p>Architected high-performance microservices ecosystem, transforming monolith into multiple microservices handling massive transaction volumes. Using Redis for inter-service communication, achieving 20% faster response times and reduced deployment errors</p>
-                </div>
-                <div class="experience-detail">
-                    <p>Implemented multi-database setup across multiple geographic regions for PAAS and white labeling of clients</p>
-                </div>
-                <div class="experience-detail">
-                    <p>Conducted comprehensive system-wide performance analysis and optimizations, such as reducing bulk user registration time by 97% (from 6 hours to 10 minutes) and significantly improving platform performance</p>
-                </div>
-                <div class="experience-detail">
-                    <p>Established code review process and ScalaStyle implementation, reducing post-release bugs</p>
-                </div>
+            <div class="edu-badge-project">
+              <b>Capstone Project:</b> Automatic railway gate control system (ATMEGA16, IR sensors, DC motors, H-Bridge, buzzer)
             </div>
+          </div>
         </div>
+      </div>
+    </section>
 
-        <!-- Experience Item 2 -->
-        <div class="experience-item">
-            <div class="experience-header">
-                <div class="company-logo">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAjVBMVEUpKUwoKEsmJkodHUUxMVKfn64QED0fH0YQEECQkJ+ZmagiIkgkJElYWG7y8vVBQV8UFEBpaYDe3uP///89PVwYGEGGhpfLy9Pn5+saGkKsrLivr7oAADpJSWbZ2eHBwcp7e4oWFkEvL1HFxc5gYHlNTWo5OViEhJi6usRTU2zi4uZjY3h4eIxwcIWnp7ZqB5JAAAABaUlEQVR4AWKgHAD6JAttCUEoilKKgS1hYOc8nP//u9c1SZ61NnELom+B7zBi2R87dVzPv4YsCCMGQJykWY6uIReZ9BH3VCiLm2ftUmVV7Ya6kfEtbDsrEz0f1GgzH8FfWyh6h1VXy5SjKPRgMs0LZJ8MLSvksR0tNFBLL8JlmJJ1XYOvy8WmZLsJn9J012rtIdfrOpMfF8NTqsLwhSckMpyCyTWE/Xwauw0g2lUzhghHZl2TT4N+6DY6KN4X9GHBrgld/D8ImXCKQRP4oX0fFtaB/yhyjDylCYWARZYGbLB29sv8czhODOcELCw5u6tZf6IPebQpy6b+3OxRSWluXM87H/TrnntSzfFCCil6UuUI+QiAxQzw8ybQxmtbnTQ58ith7wYDiNBvEdC+x703DnFsxilwb5NWWK1fHdjbvPUW4nLbKojIeTvobYFJKWIImG53dg2pKQn/ENwl8Lb8MPoSw73CvRHP2xsy7ByaXT6G9gAAAABJRU5ErkJggg==" alt="Company Logo">
-                </div>
-                <div class="experience-title">
-                    <h3>Software Engineer | Vantage Circle</h3>
-                    <p class="date">Aug 2020 - Sep 2023</p>
-                </div>
-            </div>
-            <div class="experience-details">
-                <div class="experience-detail">
-                    <p>Developed a comprehensive service integrating external SOAP and REST APIs to fetch and store deals, and process purchase data for efficient cashback distribution</p>
-                </div>
-                <div class="experience-detail">
-                    <p>Led rapid prototyping initiatives, leveraging emerging technologies such as Apache Kafka, ELK stack, and Flutter to develop impactful POCs for continuous product enhancement in mobile and web applications</p>
-                </div>
-                <div class="experience-detail">
-                    <p>Implemented holidays and vacations display and bookings service via reward points (platform currency)</p>
-                </div>
-                <div class="experience-detail">
-                    <p>Enhanced platform security with device validation and password controls</p>
-                </div>
-                <div class="experience-detail">
-                    <p>Implemented platform demo system that boosted lead conversion by 10%</p>
-                </div>
-                <div class="experience-detail">
-                    <p>Led automation of product customizations, reducing customization time by 30%</p>
-                </div>
-                <div class="experience-detail">
-                    <p>Conducted project version migrations</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Experience Item 3 -->
-        <div class="experience-item">
-            <div class="experience-header">
-                <div class="company-logo">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAjVBMVEUpKUwoKEsmJkodHUUxMVKfn64QED0fH0YQEECQkJ+ZmagiIkgkJElYWG7y8vVBQV8UFEBpaYDe3uP///89PVwYGEGGhpfLy9Pn5+saGkKsrLivr7oAADpJSWbZ2eHBwcp7e4oWFkEvL1HFxc5gYHlNTWo5OViEhJi6usRTU2zi4uZjY3h4eIxwcIWnp7ZqB5JAAAABaUlEQVR4AWKgHAD6JAttCUEoilKKgS1hYOc8nP//u9c1SZ61NnELom+B7zBi2R87dVzPv4YsCCMGQJykWY6uIReZ9BH3VCiLm2ftUmVV7Ya6kfEtbDsrEz0f1GgzH8FfWyh6h1VXy5SjKPRgMs0LZJ8MLSvksR0tNFBLL8JlmJJ1XYOvy8WmZLsJn9J012rtIdfrOpMfF8NTqsLwhSckMpyCyTWE/Xwauw0g2lUzhghHZl2TT4N+6DY6KN4X9GHBrgld/D8ImXCKQRP4oX0fFtaB/yhyjDylCYWARZYGbLB29sv8czhODOcELCw5u6tZf6IPebQpy6b+3OxRSWluXM87H/TrnntSzfFCCil6UuUI+QiAxQzw8ybQxmtbnTQ58ith7wYDiNBvEdC+x703DnFsxilwb5NWWK1fHdjbvPUW4nLbKojIeTvobYFJKWIImG53dg2pKQn/ENwl8Lb8MPoSw73CvRHP2xsy7ByaXT6G9gAAAABJRU5ErkJggg==" alt="Company Logo">
-                </div>
-                <div class="experience-title">
-                    <h3>Software Engineer Intern | Vantage Circle</h3>
-                    <p class="date">Jan 2020 - Jul 2020</p>
-                </div>
-            </div>
-            <div class="experience-details">
-                <div class="experience-detail">
-                    <p>Developed platform dashboard RESTful and Graphql APIs using Play Framework (MVC) and analytics reports</p>
-                </div>
-                <div class="experience-detail">
-                    <p>Improved data validation and exception handling within existing data processing system</p>
-                </div>
-                <div class="experience-detail">
-                    <p>Merchandise listing and gifting service: User can browse and gift/send merchandise to their colleagues</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<section id="education" class="container my-5">
-    <h2 class="text-center mb-4">Education</h2>
-    <div class="education-container">
-        <div class="education-module">
-            <h3>Bachelor of Technology in Electronics and Communication Engineering</h3>
-            <p class="institution">ASTU</p>
-            <p class="percentage">80.07%</p>
-        </div>
-    </div>
-</section>
-
-
-
-
-</main>
-
-<!-- <footer>
-    <p>&copy; 2024 Senior Software Engineer. All rights reserved.</p>
-</footer> -->
+    <!-- SKILLS -->
+    <section class="section" id="skills">
+      <div class="section-title">Skills</div>
+      <div class="skills">
+        <span class="skill">Scala</span>
+        <span class="skill">Java</span>
+        <span class="skill">Microservices</span>
+        <span class="skill">Project Management</span>
+        <span class="skill">SDLC</span>
+        <span class="skill">Mysql</span>
+        <span class="skill">Postgresql</span>
+        <span class="skill">Redis</span>
+        <span class="skill">Memcached</span>
+        <span class="skill">Graphql</span>
+        <span class="skill">Software Architectural Design</span>
+        <span class="skill">System Design</span>
+        <span class="skill">Functional Programming</span>
+        <span class="skill">Akka</span>
+        <span class="skill">Platform Design</span>
+        <span class="skill">Team Leadership</span>
+        <span class="skill">API Integration</span>
+        <span class="skill">Agile/Scrum</span>
+        <span class="skill">Kafka</span>
+        <span class="skill">REST/SOAP</span>
+        <span class="skill">Play Framework</span>
+        <span class="skill">Database Design</span>
+        <span class="skill">Cloud</span>
+        <span class="skill">Security</span>
+        <span class="skill">AWS ECS Fargate</span>
+        <span class="skill">ECR</span>
+        <span class="skill">Terraform</span>
+        <span class="skill">CI/CD Pipeline</span>
+      </div>
+    </section>
+    
+    <!-- CERTIFICATIONS -->
+    <section class="section" id="certifications">
+      <div class="section-title">Licenses & Certifications</div>
+      <ul class="cert-list">
+        <li class="cert-card">
+          <div>
+            <span class="job-title">Actor Fundamentals</span>
+            <span class="company">The AKKAdemy</span>
+            <a class="cert-link" href="https://akkademy.akka.io/share/gamification/badges/external/1745ab47-25e6-4750-bec4-92dfff656df4?lang=en&trk=public_profile_see-credential" target="_blank">View credential</a>
+          </div>
+        </li>
+        <li class="cert-card">
+          <div class="job-title">Aspiring Minds</div>
+          <ul>
+            <li>Software Engineer - IT Services (Credential ID 7274995-259)</li>
+            <li>Business Analyst (Credential ID 7274995-94)</li>
+            <li>Business Consultant (Credential ID 7274995-247)</li>
+            <li>Data Processing Specialist (Credential ID 7274995-211)</li>
+            <li>iEnglish Comprehension (Credential ID 7274995-283)</li>
+            <li>Proficiency in English (Credential ID 7274995-284)</li>
+          </ul>
+        </li>
+        <li class="cert-card">
+          <div>
+            <span class="job-title">Programming for Everybody (Getting Started with Python)</span>
+            <span class="company">Coursera</span>
+            <a class="cert-link" href="https://www.coursera.org/account/accomplishments/verify/75ZUB7AEFLFY?trk=public_profile_see-credential" target="_blank">View credential</a>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </div>
 </body>
 </html>
