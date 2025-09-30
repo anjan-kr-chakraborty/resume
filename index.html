@@ -55,21 +55,25 @@
       flex-direction: column;
       align-items: center;
       z-index: 1;
-      padding-bottom: 48px;
+      padding-bottom: 60px;
+    }
+    /* Consistent section alignment for all major blocks */
+    .hero-card, .coder-section, .section {
+      max-width: 900px;
+      width: 95%;
+      margin: 0 auto 38px auto;
+      padding: 34px 36px 18px 36px;
+      box-sizing: border-box;
     }
     .hero-card {
-      margin: 64px auto 0 auto;
       background: var(--card-bg);
       border-radius: 20px;
       box-shadow: var(--shadow);
-      padding: 48px 42px 28px 42px;
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 18px;
       border: 1.5px solid var(--border);
-      max-width: 600px;
-      width: 95%;
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -78,7 +82,7 @@
       font-size: 2.3rem;
       font-weight: 900;
       color: var(--spotify-green);
-      margin: 0;
+      margin: 0 0 10px 0;
       letter-spacing: 1px;
       font-family: 'Montserrat', Arial, sans-serif;
       line-height: 1.15;
@@ -91,7 +95,7 @@
       font-family: 'Fira Mono', monospace;
       letter-spacing: 0.7px;
       margin-top: 2px;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
       opacity: 0.96;
     }
     .hero-tags {
@@ -99,7 +103,7 @@
       flex-wrap: wrap;
       gap: 10px;
       justify-content: center;
-      margin-bottom: 14px;
+      margin-bottom: 18px;
       margin-top: 6px;
     }
     .hero-tag {
@@ -122,7 +126,7 @@
       border-color: var(--spotify-green-dark);
     }
     .hero-desc {
-      margin: 0 0 8px 0;
+      margin: 0 0 12px 0;
       font-size: 1.13rem;
       line-height: 1.7;
       color: var(--text-main);
@@ -135,15 +139,11 @@
       box-shadow: 0 2px 12px #1db95419;
       transition: box-shadow 0.2s, border-left 0.2s;
     }
-    /* Coder section */
     .coder-section {
-      margin: 40px auto 0 auto;
-      max-width: 680px;
       background: var(--code-bg);
       border-radius: 16px;
       border: 2px solid var(--code-border);
       box-shadow: 0 3px 24px #1db95433;
-      padding: 26px 28px 21px 28px;
       font-family: 'Fira Mono', monospace;
       color: #fff;
       position: relative;
@@ -157,7 +157,7 @@
       font-family: 'Montserrat', Arial, sans-serif;
       font-weight: 700;
       letter-spacing: 1px;
-      margin-bottom: 14px;
+      margin-bottom: 18px;
       text-align: left;
       border-left: 4px solid var(--spotify-green);
       padding-left: 13px;
@@ -194,11 +194,7 @@
       0%, 49% { opacity: 1; }
       50%, 100% { opacity: 0; }
     }
-    /* --- SECTION CARDS --- */
     .section {
-      margin: 46px auto 0 auto;
-      max-width: 900px;
-      padding: 34px 36px 18px 36px;
       background: var(--section-bg);
       border-radius: 16px;
       box-shadow: 0 2px 22px #1db95415;
@@ -209,10 +205,10 @@
       overflow: hidden;
     }
     .section-title {
-      font-size: 1.27rem;
+      font-size: 1.3rem;
       color: var(--spotify-green);
       letter-spacing: 1px;
-      margin-bottom: 12px;
+      margin-bottom: 22px;
       font-weight: 800;
       border-left: 4px solid var(--spotify-green);
       padding-left: 12px;
@@ -227,7 +223,7 @@
       margin: 0; padding: 0; list-style: none;
     }
     .exp-card, .edu-card, .cert-card {
-      margin-bottom: 20px;
+      margin-bottom: 26px;
       padding: 15px 20px 11px 20px;
       border-radius: 10px;
       background: var(--card-bg-light);
@@ -292,7 +288,7 @@
     .skills {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 13px;
       margin-top: 8px;
       margin-bottom: 10px;
       justify-content: flex-start;
@@ -317,11 +313,10 @@
       background: var(--spotify-green);
       color: #191414;
     }
-    /* --- Education Badge Timeline --- */
     .edu-timeline {
       display: flex;
       flex-direction: column;
-      gap: 24px;
+      gap: 28px;
       margin-top: 30px;
       margin-bottom: 18px;
       position: relative;
@@ -416,14 +411,21 @@
       color: #fff;
       text-shadow: 0 0 12px #1db954, 0 1px 8px #191414;
     }
+    .cert-list {
+      margin-top: 0;
+      margin-bottom: 0;
+      padding: 0;
+    }
+    .cert-card {
+      margin-bottom: 24px;
+    }
     @media (max-width: 1024px) {
       .hero-card, .section, .coder-section { padding-left: 7vw; padding-right: 7vw; }
       .edu-badge-content { padding: 14px 10px 12px 12px;}
     }
     @media (max-width: 800px) {
       .main-wrap { padding-bottom: 18px;}
-      .hero-card {padding: 32px 3vw 22px 3vw;}
-      .coder-section { padding: 18px 2vw 16px 2vw;}
+      .hero-card, .section, .coder-section {padding: 18px 2vw 16px 2vw;}
       .edu-timeline:before { left: 15px;}
       .edu-badge-dot { min-width: 14px; width: 14px; height: 14px;}
       .edu-badge-content { padding: 10px 7px 10px 10px;}
@@ -441,7 +443,7 @@
 <body>
   <div class="main-wrap">
     <!-- HERO CARD -->
-    <section class="hero-card" id="about">
+    <section class="hero-card section" id="about">
       <h1 class="hero-title">Anjan Chakraborty</h1>
       <div class="hero-sub">Senior Software Engineer</div>
       <div class="hero-tags">
@@ -461,12 +463,12 @@
     </section>
 
     <!-- CODER STUFF -->
-    <section class="coder-section" id="coder">
+    <section class="coder-section section" id="coder">
       <h2 class="coder-title">Coder's Playground</h2>
       <div class="coder-terminal" aria-label="Simulated code window">
         <span class="code-comm">// Welcome to my code world!</span><br>
         <span class="code-kw">object</span> <span class="code-tag">AboutMe</span> <span class="code-kw">{</span><br>
-        &nbsp;&nbsp;<span class="code-kw">def</span> <span class="code-func">main</span>(<span class="code-tag">args</span>: <span class="code-kw">Array</span>[<span class="code-kw">String</span>]): <span class="code-kw">Unit</span> = <span class="code-kw">{</span><br>
+        &nbsp;&nbsp;<span class="code-kw">def</span> <span class="code-func">main</span>(<span class="code-tag">args</span>: <span class="code-kw">Array</span>[<span class="code-kw">String</span>]): <br>
         &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-comm">// Backend engineer, system designer, team builder</span><br>
         &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-kw">val</span> <span class="code-tag">techStack</span> = <span class="code-str">"Scala, Java, Microservices, AWS, Terraform"</span><br>
         &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-kw">println</span>(<span class="code-str">"👋 Hi, I'm Anjan. Let's build scalable systems together!"</span>)<br>
@@ -525,7 +527,7 @@
             <li>Proficient in Monolithic and Microservices architecture, including message-driven architecture.</li>
             <li>Developed Scala libraries for enhanced functionality.</li>
             <li>Managed a merchandise listing and gifting service for user convenience.</li>
-            <li><b>Responsibilities:</b> Develop, test, and document new product features, customizations, and troubleshoot service failures. Oversee product development, enhancements, and bug fixes within a Scrum team using Agile methodology. Consult and implement product customizations.</li>
+            <li><b>Responsibilities:</b> Develop, test, and document new product features, customizations, and troubleshoot service failures. Oversee product development, enhancements, and bug fixes with agile methodologies.</li>
           </ul>
         </li>
         <li class="exp-card">
